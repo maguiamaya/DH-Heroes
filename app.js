@@ -1,6 +1,7 @@
 // npm init -y ...npm i express... despues creamos app.js
+// 
 const express = require("express");
-const port = 3000;
+const port = 3030;
 const path = require("path"); // ayuda a construir rutas absolutas (las relativas se construyen a mano)
 const views = path.join(__dirname, "views");
 console.log(__dirname);
@@ -10,11 +11,15 @@ const app = express();
 //req ---> request(requerimiento)     res----> response (respuesta)
 app.use(express.static("public")); // donde van a estar todos los recursos estaticos q vbamos a usar en el proyecto
 
-app.get("/", (req, res)=> res.sendFile(path.join(views, "home.html"))) //primer parametro la url: ruta raiz : localhost:3000
-app.get("/login", (req, res)=> res.sendFile(path.join(views, "login.html")))
-app.get("/register", (req, res)=> res.sendFile(path.join(views, "register.html")))
-app.get("/detail", (req, res)=> res.sendFile(path.join(views, "detail.html")))
-app.get("/cart", (req, res)=> res.sendFile(path.join(views, "cart.html")))
+app.get("/home", (req, res)=> res.sendFile(path.join(views, "index.html"))) //primer parametro la url: ruta raiz : localhost:3000
+app.get("/babbage", (req, res)=> res.sendFile(path.join(views, "babbage.html")))
+app.get("/berners-lee", (req, res)=> res.sendFile(path.join(views, "berners-lee.html")))
+app.get("/clarke", (req, res)=> res.sendFile(path.join(views, "clarke.html")))
+app.get("/hamilton", (req, res)=> res.sendFile(path.join(views, "hamilton.html")))
+app.get("/hopper", (req, res)=> res.sendFile(path.join(views, "hopper.html")))
+app.get("/lovelace", (req, res)=> res.sendFile(path.join(views, "lovelace.html")))
+app.get("/turing", (req, res)=> res.sendFile(path.join(views, "turing.html")))
+
 
 
 
